@@ -12,10 +12,6 @@ html, body {
   width: 100%;
 }
 
-.card-columns {
-  column-count: 2;
-}
-
 body {
   font-family: 'Lato', sans-serif;
 }
@@ -62,7 +58,7 @@ h3 {
   padding-top: 4px;
 }
 
-#courses-skills h3, #contact-me h3 {
+#skills h3, #contact-me h3 {
   font-size: 24px;
 }
 
@@ -71,16 +67,16 @@ h4 {
   padding-top: 8px;
 }
 
-#courses-skills li {
+#skills li {
   padding: 3px;
 }
 
-#courses-skills ul {
+#skills ul {
   padding-bottom: 20px;
 }
 
 
-#courses-skills li:hover {
+#skills li:hover {
   background-color: #f5f5f5;
 }
 

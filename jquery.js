@@ -6,14 +6,26 @@
     /**
      * Smooth scroll functionality when clicking a link anchor.
      */
-     $(document).ready(function() {
-      $('a[href*="#"]').on('click', (event) => {
-        const hash = event.currentTarget.hash;
-        if (hash) {
-          event.preventDefault();
-          $('html, body').animate({scrollTop: $(hash).offset().top - 60}, 750);
+     $('a[href*="#"]:not([href="#"])').click(function() {
+      if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') && location.hostname === this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if ($(".nav-primary").hasClass("nav-primary-fixed")) {
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top - 40
+            }, 750);
+            return false;
+          }
+        } else {
+          if (target.length) {
+            $('html, body').animate({
+              scrollTop: target.offset().top - 80
+            }, 750);
+            return false;
+          }
         }
-      });
+      }
     });
 
   
